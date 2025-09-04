@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+      <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <nav class="nav-container" id="navbar">
+      <div class="nav-logo">
+        <div class="logo-icon"><a href="#home"</a>
+          <img src="logo.png" alt="TechieDox Logo class="logo" />
+        
+        </div>
+        <span class="nav-brand">TECHIEDOX</span>
+      </div>
+
+      <div class="nav-center">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#portfolio" class="portfolio-btn">View Work</a>
+        <a href="#contact" class="contact-btn">Get Quote</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+        <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+        <li><a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a></li>
+        <li>
+          <a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a>
+        </li>
+        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+      </ul>
+      <div class="mobile-actions">
+        <a href="#portfolio" class="portfolio-btn" onclick="closeMobileMenu()"
+          >View Work</a
+        >
+        <a href="#contact" class="contact-btn" onclick="closeMobileMenu()"
+          >Get Quote</a
+        >
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">TECHIEDOX</h1>
+        <p class="hero-subtitle">Transforming Visions into Digital Reality</p>
+        <div class="hero-cta">
+          <a href="#services" class="btn-primary">Explore Our Services</a>
+          <a href="#contact" class="btn-secondary">Start Your Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services scroll-animate">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-desc">
+            Custom websites and web applications built with cutting-edge
+            technologies. From responsive designs to complex e-commerce
+            platforms.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3 class="service-title">Mobile Apps</h3>
+          <p class="service-desc">
+            Native and cross-platform mobile applications that deliver
+            exceptional user experiences on iOS and Android devices.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">
+            Intuitive and visually stunning user interfaces that convert
+            visitors into customers through thoughtful design principles.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3 class="service-title">Digital Marketing</h3>
+          <p class="service-desc">
+            Strategic digital marketing campaigns including SEO, social media
+            marketing, and paid advertising to grow your business.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛒</div>
+          <h3 class="service-title">E-commerce Solutions</h3>
+          <p class="service-desc">
+            Complete online stores with payment integration, inventory
+            management, and scalable architecture for growing businesses.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3 class="service-title">Tech Consulting</h3>
+          <p class="service-desc">
+            Expert technology consulting to help you make informed decisions
+            about your digital infrastructure and growth strategies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio scroll-animate">
+      <h2 class="section-title">Our Portfolio</h2>
+
+      <div class="portfolio-filters">
+        <button class="filter-btn active" onclick="filterProjects('all')">
+          All Projects
+        </button>
+        <button class="filter-btn" onclick="filterProjects('web')">
+          Web Development
+        </button>
+        <button class="filter-btn" onclick="filterProjects('mobile')">
+          Mobile Apps
+        </button>
+        <button class="filter-btn" onclick="filterProjects('design')">
+          UI/UX Design
+        </button>
+        <button class="filter-btn" onclick="filterProjects('ecommerce')">
+          E-commerce
+        </button>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card" data-category="web ecommerce">
+          <div class="portfolio-image">🛍️</div>
+          <div class="portfolio-content">
+            <div class="portfolio-category">E-commerce</div>
+            <h3 class="portfolio-title">Premium Fashion Store</h3>
+            <p class="portfolio-desc">
+              A luxury e-commerce platform with advanced filtering, wishlist
+              functionality, and seamless checkout experience.
+            </p>
+            <div class="portfolio-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Stripe</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" class="portfolio-link">Live Demo</a>
+              <a href="#" class="portfolio-link">View Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="mobile">
+          <div class="portfolio-image">📱</div>
+          <div class="portfolio-content">
+            <div class="portfolio-category">Mobile App</div>
+            <h3 class="portfolio-title">Fitness Tracking App</h3>
+            <p class="portfolio-desc">
+              Cross-platform fitness app with workout tracking, progress
+              analytics, and social features for motivation.
+            </p>
+            <div class="portfolio-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Redux</span>
+              <span class="tech-tag">Chart.js</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" class="portfolio-link">App Store</a>
+              <a href="#" class="portfolio-link">Google Play</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="web design">
+          <div class="portfolio-image">🏢</div>
+          <div class="portfolio-content">
+            <div class="portfolio-category">Web Design</div>
+            <h3 class="portfolio-title">Corporate Website</h3>
+            <p class="portfolio-desc">
+              Modern corporate website with interactive animations, case studies
+              showcase, and lead generation forms.
+            </p>
+            <div class="portfolio-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">GSAP</span>
+              <span class="tech-tag">Tailwind</span>
+              <span class="tech-tag">Netlify</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" class="portfolio-link">Visit Site</a>
+              <a href="#" class="portfolio-link">Case Study</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="mobile design">
+          <div class="portfolio-image">🍕</div>
+          <div class="portfolio-content">
+            <div class="portfolio-category">Mobile App</div>
+            <h3 class="portfolio-title">Food Delivery App</h3>
+            <p class="portfolio-desc">
+              Complete food delivery solution with real-time tracking, payment
+              integration, and restaurant management system.
+            </p>
+            <div class="portfolio-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Maps API</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" class="portfolio-link">Live Demo</a>
+              <a href="#" class="portfolio-link">Documentation</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="web">
+          <div class="portfolio-image">🎓</div>
+          <div class="portfolio-content">
+            <div class="portfolio-category">Web Platform</div>
+            <h3 class="portfolio-title">Learning Management System</h3>
+            <p class="portfolio-desc">
+              Comprehensive LMS with course creation, student progress tracking,
+              and interactive learning tools.
+            </p>
+            <div class="portfolio-tech">
+              <span class="tech-tag">Angular</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">WebRTC</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" class="portfolio-link">Platform</a>
+              <a href="#" class="portfolio-link">Features</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="design">
+          <div class="portfolio-image">💼</div>
+          <div class="portfolio-content">
+            <div class="portfolio-category">UI/UX Design</div>
+            <h3 class="portfolio-title">SaaS Dashboard</h3>
+            <p class="portfolio-desc">
+              Clean and intuitive dashboard design for a project management SaaS
+              with data visualization and team collaboration features.
+            </p>
+            <div class="portfolio-tech">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">Principle</span>
+              <span class="tech-tag">Adobe XD</span>
+              <span class="tech-tag">Framer</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="#" class="portfolio-link">Prototype</a>
+              <a href="#" class="portfolio-link">Design System</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials scroll-animate">
+  <div class="testimonials-container">
+    <h2 class="section-title">What Our Clients Say</h2>
+
+    <!-- Carousel Wrapper -->
+    <div class="testimonial-carousel-wrapper">
+      <!-- Left Arrow -->
+      <button class="testimonial-arrow left" onclick="moveTestimonials(-1)">&#10094;</button>
+
+      <!-- Sliding Container -->
+      <div class="testimonial-carousel" id="testimonialCarousel">
+        <!-- All your testimonial cards as-is -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            TECHIEDOX delivered beyond our expectations. Their team transformed our outdated website into a modern, conversion-optimized platform that increased our sales by 150%.
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div class="author-info">
+              <h4>Sarah Mitchell</h4>
+              <p>CEO, Fashion Forward</p>
+              <div class="testimonial-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            The mobile app they developed for our startup is incredible. The user experience is seamless, and we've received outstanding feedback from our customers. Highly recommend!
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MJ</div>
+            <div class="author-info">
+              <h4>Michael Johnson</h4>
+              <p>Founder, FitTrack Pro</p>
+              <div class="testimonial-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            Professional, creative, and technically excellent. TECHIEDOX handled our complex e-commerce project with expertise and delivered on time. Our revenue has doubled since launch.
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">EC</div>
+            <div class="author-info">
+              <h4>Emily Chen</h4>
+              <p>Director, TechGear Solutions</p>
+              <div class="testimonial-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            Their UI/UX design skills are top-notch. They completely reimagined our user interface, making it intuitive and beautiful. User engagement increased by 200%.
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DL</div>
+            <div class="author-info">
+              <h4>David Lee</h4>
+              <p>Product Manager, InnovateLab</p>
+              <div class="testimonial-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            Exceptional digital marketing results! Our online presence grew significantly, and we're now ranking #1 for our key search terms. ROI exceeded all expectations.
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JW</div>
+            <div class="author-info">
+              <h4>Jennifer Wilson</h4>
+              <p>Marketing Director, Growth Co.</p>
+              <div class="testimonial-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            Working with TECHIEDOX was a game-changer for our business. Their technical expertise and creative vision brought our ideas to life perfectly. Outstanding team!
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RT</div>
+            <div class="author-info">
+              <h4>Robert Thompson</h4>
+              <p>CTO, NextGen Systems</p>
+              <div class="testimonial-rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Arrow -->
+      <button class="testimonial-arrow right" onclick="moveTestimonials(1)">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about scroll-animate">
+      <h2 class="section-title">About TECHIEDOX</h2>
+      <div class="about-content">
+        <p class="about-desc">
+         TECHIEDOX is a next-generation digital agency turning ambitious ideas into powerful online experiences.
+We craft high-performance websites, scalable mobile apps, and data-driven marketing strategies — blending bold creativity with technical precision.
+Our mission is simple: build digital solutions that don’t just look great, but fuel measurable business growth and lasting impact.
+        </p>
+
+        <div class="tech-stack">
+          <div class="tech-item">
+            <div class="tech-icon">⚛️</div>
+            <div class="tech-name">React</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">📱</div>
+            <div class="tech-name">React Native</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">🟢</div>
+            <div class="tech-name">Node.js</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">🐍</div>
+            <div class="tech-name">Python</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">🔷</div>
+            <div class="tech-name">MongoDB</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">☁️</div>
+            <div class="tech-name">AWS</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">🎨</div>
+            <div class="tech-name">Figma</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">📊</div>
+            <div class="tech-name">Analytics</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">🔐</div>
+            <div class="tech-name">Auth</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">📄</div>
+            <div class="tech-name">Crud</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact scroll-animate">
+  <div class="contact-content">
+    <h2 class="contact-title">Let's Build Something Amazing</h2>
+    <p class="contact-desc">
+      Ready to transform your business with cutting-edge technology? Let's
+      discuss your project and bring your vision to life.
+    </p>
+
+    <!-- Updated Contact Form (Formspree integrated) -->
+    <form
+      class="contact-form"
+      id="contactForm"
+      action="https://formspree.io/f/xeokgdlw"
+      method="POST"
+    >
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-input"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-input"
+          name="email"
+          placeholder="Email Address"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="tel"
+          class="form-input"
+          name="phone"
+          placeholder="Phone Number"
+        />
+      </div>
+      <div class="form-group">
+        <select
+          class="form-input"
+          name="service"
+          required
+          style="color: rgba(255, 255, 255, 0.8)"
+        >
+          <option value="" style="color: #333">Select Service</option>
+          <option value="web-development" style="color: #333">
+            Web Development
+          </option>
+          <option value="mobile-app" style="color: #333">
+            Mobile App Development
+          </option>
+          <option value="ui-ux-design" style="color: #333">
+            UI/UX Design
+          </option>
+          <option value="digital-marketing" style="color: #333">
+            Digital Marketing
+          </option>
+          <option value="ecommerce" style="color: #333">
+            E-commerce Solutions
+          </option>
+          <option value="consulting" style="color: #333">
+            Tech Consulting
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea
+          class="form-textarea"
+          name="message"
+          placeholder="Tell us about your project requirements..."
+          required
+        ></textarea>
+      </div>
+
+      <button class="btn-primary" type="submit">
+        Start Your Project
+      </button>
+    </form>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-item-icon">📧</div>
+        <div class="contact-item-text">techiedox@gmail.com</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div class="contact-item-text">+91 829-206-1543</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-text">Tarapur Munger Bihar(823321)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Premium Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <div class="footer-logo-icon">
+                <a href="#home" ><img src="logo.png" alt="TechieDox Logo" class="logo" /> </a>
+              </div>
+              <span class="footer-brand-name">TECHIEDOX</span>
+            </div>
+            <p class="footer-desc">
+              We are a premium digital agency dedicated to transforming
+              businesses through innovative technology solutions. From concept
+              to deployment, we deliver excellence.
+            </p>
+            <div class="footer-social">
+              <!-- <a href="#" class="social-link">📘</a>
+              <a href="#" class="social-link">🐦</a> -->
+              <a href="https://www.instagram.com/techiedox/" class="social-link" target="_blank">📷</a>
+              <a href="https://rehanalxm.github.io/My-Portfolio/" class="social-link" target="_blank">💼</a>
+              <!-- <a href="#" class="social-link">📺</a> -->
+            </div>
+           <div class="footer-newsletter">
+  <h4 class="newsletter-title">Stay Updated</h4>
+  <p class="newsletter-desc">
+    Get the latest tech insights and project updates
+  </p>
+  <form
+    class="contact-form"
+    id="contactForm"
+    action="https://formspree.io/f/xeokgdlw"
+    method="POST"
+  >
+    <div class="newsletter-form form-group">
+      <input
+        type="email"
+        name="email"         
+        class="newsletter-input"
+        placeholder="Enter your email"
+        required               
+      />
+      <button class="newsletter-btn" type="submit">Subscribe</button>
+    </div>
+  </form>
+</div>
+
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="#services">Web Development</a></li>
+              <li><a href="#services">Mobile Apps</a></li>
+              <li><a href="#services">UI/UX Design</a></li>
+              <li><a href="#services">Digital Marketing</a></li>
+              <li><a href="#services">E-commerce Solutions</a></li>
+              <li><a href="#services">Tech Consulting</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-title">Company</h4>
+            <ul class="footer-links">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#portfolio">Our Work</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-title">Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="#">White Papers</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">API Reference</a></li>
+              <li><a href="#">Support Center</a></li>
+              <li><a href="#">Free Tools</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © 2025 TECHIEDOX. All rights reserved. Crafted with ❤️ for digital
+            excellence.
+          </div>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
